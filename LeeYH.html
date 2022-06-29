@@ -75,9 +75,11 @@
 		<!-- Tab links -->
 		<div class="tab">
 			<button class="tablinks" onclick="LeeYH(event, 'About')">About</button>
+			<button class="tablinks" onclick="LeeYH(event, 'Teaching')">Teaching (using tables)</button>
 			<button class="tablinks" onclick="LeeYH(event, 'CCA')">CCA</button>
 			<button class="tablinks" onclick="LeeYH(event, 'Achievements')">Achievements</button>
 			<button class="tablinks" onclick="LeeYH(event, 'Skills')">Skills</button>
+			<button class="tablinks" onclick="LeeYH(event, 'Feedback')">Feedback (form)</button>
 		</div>
 
 		<!-- Tab content -->
@@ -85,8 +87,18 @@
 			<h2>About</h2>
 			<p>Currently a computing teacher in Hwa Chong Institution, teaching H2 Computing to 3 different classes.</p>
 			<h3>Previous classes taught:</h3>
-			<p>2022: 22S6D (CT+CP), 22S6B (CP), 22S6F (CP), 22S7F (CP)</p>
-			<p>2020-2021: 20S7F (CT+MA), 20S65 (MA), 20S6K (MA), H3 Maths</p>
+			<table>
+				<tr>
+					<th>2022-curr</th>
+					<th>2020-2021</th>
+					<th>2018-2019</th>
+				</tr>
+				<tr>
+					<td>22S6D (CT+CP), 22S6B (CP), 22S6F (CP), 22S7F (CP)</td>
+					<td>20S7F (CT+MA), 20S65 (MA), 20S6K (MA), H3 Maths</td>
+					<td>18S6D (MA), 18S73 (MA), 18S77 (MA), 18S79 (MA)</td>
+				</tr>
+				</table>
 		</div>
 
 		<div id="CCA" class="tabcontent">
@@ -109,16 +121,21 @@
 			<h3>Example:</h3>
 			<p>This entire page was copied from W3S.</p>
 		</div>
-		<hr />
-		<h3>Feedback</h3>
-		<p>Leave a feedback that will never get to me since the submit button does not really submit the form.</p>
 		
-		<form>
-			<p>Name</p> 
-			<input type="text" placeholder="Arthur Pendragon" required="required">
-			<p>Feedback</p>
-			<textarea name="feedback">This is an awesome page.</textarea><br>
-			<button type="button">Ignore my feedback.</button>
-		</form>
+		<div id="Feedback" class="tabcontent">
+			<h2>Skills</h2>
+			<p>Leave a feedback that will never get to me since the submit button does not really submit the form.</p>
+			<form>
+				<p>Name</p> 
+				<input type="text" placeholder="Arthur Pendragon" required="required">
+				<p>Feedback</p>
+				<textarea name="feedback">This is an awesome page.</textarea><br>
+				<button type="button">Ignore my feedback.</button>
+			</form>
+			For serious feedback: <a href = "mailto: leeyh@hci.edu.sg">Send me an email</a>
+		</div>
+		<hr />
+		<p>To be honest, I don't know why I'm making this page to be so messy, but hope it's interesting to anyone who passes by here.<p>
+		
 	</body>
 </html>
