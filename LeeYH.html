@@ -40,30 +40,43 @@
 			  border: 1px solid #ccc;
 			  border-top: none;
 			}
+			
+			h1 {
+			  color: navy;
+			  margin-left: 20px;
+			}
+			
+			h2 {
+			  color: red;
+			}
+			
 		</style>
 	
 		<script>
 			function LeeYH(evt, sectionName) {
-			  // Declare all variables
-			  var i, tabcontent, tablinks;
+				  // Declare all variables
+				  var i, tabcontent, tablinks;
 
-			  // Get all elements with class="tabcontent" and hide them
-			  tabcontent = document.getElementsByClassName("tabcontent");
-			  for (i = 0; i < tabcontent.length; i++) {
-				tabcontent[i].style.display = "none";
-			  }
+				  // Get all elements with class="tabcontent" and hide them
+				  tabcontent = document.getElementsByClassName("tabcontent");
+				  for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+				  }
 
-			  // Get all elements with class="tablinks" and remove the class "active"
-			  tablinks = document.getElementsByClassName("tablinks");
-			  for (i = 0; i < tablinks.length; i++) {
-				tablinks[i].className = tablinks[i].className.replace(" active", "");
-			  }
+				  // Get all elements with class="tablinks" and remove the class "active"
+				  tablinks = document.getElementsByClassName("tablinks");
+				  for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(" active", "");
+				  }
 
-			  // Show the current tab, and add an "active" class to the button that opened the tab
-			  document.getElementById(sectionName).style.display = "block";
-			  evt.currentTarget.className += " active";
+				  // Show the current tab, and add an "active" class to the button that opened the tab
+				  document.getElementById(sectionName).style.display = "block";
+				  evt.currentTarget.className += " active";
 			}
 
+			  // Get the element with id="defaultOpen" and click on it
+  			  document.getElementById("defaultOpen").click();
+			
 		</script>
 		
 	</head>
@@ -74,19 +87,27 @@
 		<hr>
 		<!-- Tab links -->
 		<div class="tab">
-			<button class="tablinks" onclick="LeeYH(event, 'About')">About</button>
-			<button class="tablinks" onclick="LeeYH(event, 'Teaching')">Teaching (using tables)</button>
-			<button class="tablinks" onclick="LeeYH(event, 'CCA')">CCA</button>
-			<button class="tablinks" onclick="LeeYH(event, 'Achievements')">Achievements</button>
-			<button class="tablinks" onclick="LeeYH(event, 'Skills')">Skills</button>
-			<button class="tablinks" onclick="LeeYH(event, 'Feedback')">Feedback (form)</button>
+			<button class="tablinks" onclick="LeeYH(tabchange, 'About')",  id="defaultOpen">About</button>
+			<button class="tablinks" onclick="LeeYH(tabchange, 'Teaching')">Teaching (using tables)</button>
+			<button class="tablinks" onclick="LeeYH(tabchange, 'CCA')">CCA</button>
+			<button class="tablinks" onclick="LeeYH(tabchange, 'Achievements')">Achievements</button>
+			<button class="tablinks" onclick="LeeYH(tabchange, 'Skills')">Skills</button>
+			<button class="tablinks" onclick="LeeYH(tabchange, 'Feedback')">Feedback (form)</button>
 		</div>
 
+		
 		<!-- Tab content -->
+		
 		<div id="About" class="tabcontent">
 			<h2>About</h2>
+			<p>Just a nobody. Click other links above.</p>
+		</div>
+		
+		<div id="Teaching" class="tabcontent">
+			<h2>Teaching</h2>
 			<p>Currently a computing teacher in Hwa Chong Institution, teaching H2 Computing to 3 different classes.</p>
-			<h3>Previous classes taught:</h3>
+			<p>Previously taught Mathematics and Physics.</p>
+			<h3>Classes taught:</h3>
 			<table>
 				<tr>
 					<th>2022-curr</th>
