@@ -3,25 +3,109 @@
 	<head>
 		<meta charset="utf-8" />
     		<title>LeeYH's whoami</title>
+		
+				<style>
+			/* Style the tab */
+			.tab {
+			  overflow: hidden;
+			  border: 1px solid #ccc;
+			  background-color: #f1f1f1;
+			}
+
+			/* Style the buttons that are used to open the tab content */
+			.tab button {
+			  background-color: inherit;
+			  float: left;
+			  border: none;
+			  outline: none;
+			  cursor: pointer;
+			  padding: 14px 16px;
+			  transition: 0.3s;
+			}
+
+			/* Change background color of buttons on hover */
+			.tab button:hover {
+			  background-color: #ddd;
+			}
+
+			/* Create an active/current tablink class */
+			.tab button.active {
+			  background-color: #ccc;
+			}
+
+			/* Style the tab content */
+			.tabcontent {
+			  display: none;
+			  padding: 6px 12px;
+			  border: 1px solid #ccc;
+			  border-top: none;
+			}
+		</style>
+	
+		<script>
+			function LeeYH(evt, sectionName) {
+			  // Declare all variables
+			  var i, tabcontent, tablinks;
+
+			  // Get all elements with class="tabcontent" and hide them
+			  tabcontent = document.getElementsByClassName("tabcontent");
+			  for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			  }
+
+			  // Get all elements with class="tablinks" and remove the class "active"
+			  tablinks = document.getElementsByClassName("tablinks");
+			  for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			  }
+
+			  // Show the current tab, and add an "active" class to the button that opened the tab
+			  document.getElementById(sectionName).style.display = "block";
+			  evt.currentTarget.className += " active";
+			}
+
+		</script>
+		
 	</head>
 
 	<body>
 		<h1>Mr Lee Yung Hei</h1>
+		<p>Note that I am using &lt;script&gt; for the JS parts.</p>
 		<hr>
-		<h2>About</h2>
-		Currently a computing teacher in Hwa Chong Institution, teaching H2 Computing to 3 different classes.		
-		<h3>Previous classes taught:</h3>
-		2022: 22S6D (CT+CP), 22S6B (CP), 22S6F (CP), 22S7F (CP)
-		2020-2021: 20S7F (CT+MA), 20S65 (MA), 20S6K (MA), H3 Maths
-		<hr>
-		<h2>CCA</h2>
-		Some random info on CCAs.
-		<hr>
-		<h2>Achievements</h2>
-		Won many many prizes that are pointless. <br>
-		The proud creator of this page.
-		<hr>
-		<h2>Misc.</h2>
-		Am getting sleepy.
+		<!-- Tab links -->
+		<div class="tab">
+			<button class="tablinks" onclick="LeeYH(event, 'About')">About</button>
+			<button class="tablinks" onclick="LeeYH(event, 'CCA')">CCA</button>
+			<button class="tablinks" onclick="LeeYH(event, 'Achievement')">Achievement</button>
+			<button class="tablinks" onclick="LeeYH(event, 'Skills')">Skills</button>
+		</div>
+
+		<!-- Tab content -->
+		<div id="About" class="tabcontent">
+			<h2>About</h2>
+			<p>Currently a computing teacher in Hwa Chong Institution, teaching H2 Computing to 3 different classes.</p>
+			<h3>Previous classes taught:</h3>
+			<p>2022: 22S6D (CT+CP), 22S6B (CP), 22S6F (CP), 22S7F (CP)</p><br />
+			<p>2020-2021: 20S7F (CT+MA), 20S65 (MA), 20S6K (MA), H3 Maths</p>
+		</div>
+
+		<div id="CCA" class="tabcontent">
+			<h2>CCA</h2>
+			<p>Currently a teacher-in-charge of Outdoor Education Student Club (OESC), and managing multiple (V)OCIP projects.</p>
+			<h3>2022 projects:</h3>
+			<p>VOCIP China: a project benefitting 70+ primary school students in Fujian and cultural exchange with Wenchang High School in Hainan.</p>
+		</div>
+		
+		<div id="Achievements" class="tabcontent">
+			<h2>Achievements</h2>
+			<p>Won many many prizes that are pointless.</p>
+			<h3>Example:</h3>
+			<p>"Most pointless use of tabs so that i can practice some JS" award.</p>
+		</div>
+		
+		<div id="Skills" class="tabcontent">
+			<h2>Skills</h2>
+			<p>Good at copy-and-pasting code from the internet.</p>
+		</div>
 	</body>
 </html>
